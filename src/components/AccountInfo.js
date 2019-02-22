@@ -33,6 +33,9 @@ const AccountInfo = props => {
                 <div>
                  <label style={{color:"red"}}>Please wait 5 minutes to see your information in table.</label>
                 </div>
+                <div>
+                    <label style={{color:"red"}}>Run into issues? Suggestions? Msg Chris.4527</label>
+                </div>
             </div>
         </div>
     )
