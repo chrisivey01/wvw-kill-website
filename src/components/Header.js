@@ -12,13 +12,13 @@ const Header = props => {
                 Top weekly killer: {props.topWeeklyKiller !== '' ? props.topWeeklyKiller : null}
             </div>
             <div style={{display:"inline-block"}}>
-                <Link to="/weekly" onClick={props.weeklyHandler}>
+                <Link to="/weeklyLeaders" onClick={props.weeklyHandler}>
                     <button className="routeButtons">Weekly</button>
                 </Link>
-                <Link to="/leader" onClick={props.leaderboardHandler}>
+                <Link to="/Leaders" onClick={props.leaderboardHandler}>
                     <button className="routeButtons">Top</button>
                 </Link>
-                <div style={{right:0, position:'absolute'}}>
+                <div style={{right:0, top:95, position:'absolute'}}>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_donations" />
                     <input type="hidden" name="business" value="Y5DEZW3QBMNRW" />
