@@ -12,10 +12,10 @@ const Header = props => {
                 Top weekly killer: {props.topWeeklyKiller !== '' ? props.topWeeklyKiller : null}
             </div>
             <div style={{display:"inline-block"}}>
-                <Link to="/weeklyLeaders" onClick={props.weeklyHandler}>
+                <Link to="/week" onClick={props.weeklyHandler}>
                     <button className="routeButtons">Weekly</button>
                 </Link>
-                <Link to="/Leaders" onClick={props.leaderboardHandler}>
+                <Link to="/top" onClick={props.leaderboardHandler}>
                     <button className="routeButtons">Top</button>
                 </Link>
                 <div style={{right:0, top:95, position:'absolute'}}>
