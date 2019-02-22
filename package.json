@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "pm2": "^3.3.1",
     "react": "^16.8.2",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.8.2",
