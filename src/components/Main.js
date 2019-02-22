@@ -18,7 +18,9 @@ const Main = props => {
     useEffect(()=>{
         services.loadWeeklyTop()
             .then(res => {
-                setTopWeeklyKiller(res[0].name)
+                if(res.length>0) {
+                    setTopWeeklyKiller(res[0].name)
+                }
             })
     },[])
 
