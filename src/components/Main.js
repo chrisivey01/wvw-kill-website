@@ -67,7 +67,7 @@ const Main = props => {
             <Route path="/" exact component={() => <AccountSubmitter/>}/>
             <Route path="/leaderboard" component={() => <TopTable
                                                             leaderboard={leaderboard}/>}/>
-            <Route path="/topWeekly" component={() => <WeeklyTable
+            <Route path="/top" component={() => <WeeklyTable
                                                             weekly={weekly}/>}/>
 
         </div>
