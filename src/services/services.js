@@ -3,7 +3,7 @@ const accountUrl = 'https://api.guildwars2.com/v2/account?access_token='
 const achievementUrl = 'https://api.guildwars2.com/v2/account/achievements?access_token='
 let guildUrl = 'https://api.guildwars2.com/v2/guild/'
 // const url = 'http://localhost:8080'
-const url = 'http://3.84.120.216:8080'
+const url = 'http://3.82.196.158:8080'
 export default {
     obtainApi(api) {
         return fetch(url + "/api",{
