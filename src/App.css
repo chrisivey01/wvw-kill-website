@@ -1,5 +1,8 @@
 .header{
   background-color: rgb(26, 26, 27);
+  /* display:inline-block; */
+  text-align:left;
+
 }
 
 * {
@@ -35,13 +38,28 @@ html,body {
   background-color: #666;
 }
 
-#title {
+/* #title {
   display: inline-block;
   font-size:40px;
   width:100%;
   text-align:center;
+} */
+
+#title {
+  /* display: inline-block; */
+  font-size:20px;
+  padding:10px;
+  /* width:100%; */
+  /* text-align:center; */
 }
 
+#weeklyKill{
+  font-size:20px;
+  padding:10px;
+  text-align: center;
+  display:inline-block;
+  width:700px;
+}
 
 .App{
   background-color: rgb(0, 0, 0);
@@ -77,3 +95,48 @@ html,body {
     transform: rotate(360deg);
   }
 }
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdownContent a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

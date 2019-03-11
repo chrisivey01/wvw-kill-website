@@ -56,12 +56,32 @@ const Main = props => {
             })
     }
 
+    const showDropDown = () => {
+        document.getElementById("dropDownList").classList.toggle("show");
+    }
+      
+      // Close the dropdown menu if the user clicks outside of it
+    //  window.onclick = function(event) {
+    //     if (!event.target.matches('.dropbtn')) {
+    //       var dropdowns = document.getElementsByClassName("dropdown-content");
+    //       var i;
+    //       for (i = 0; i < dropdowns.length; i++) {
+    //         var openDropdown = dropdowns[i];
+    //         if (openDropdown.classList.contains('show')) {
+    //           openDropdown.classList.remove('show');
+    //         }
+    //       }
+    //     }
+    //   }
+      
+
     return (
         <div>
             <Header
                 topWeeklyKiller={topWeeklyKiller}
                 weeklyHandler={weeklyHandler}
-                leaderboardHandler={leaderboardHandler}/>
+                leaderboardHandler={leaderboardHandler}
+                showDropDown={showDropDown}/>
 
 
             <Route path="/" exact component={() => <AccountSubmitter/>}/>
