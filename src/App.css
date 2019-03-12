@@ -21,6 +21,10 @@ html,body {
 
 }
 
+.table-hover tbody tr:hover td {
+  background: rebeccapurple;
+}
+
 .routeButtons{
   display:inline-block;
   width:150px;
