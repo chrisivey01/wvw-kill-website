@@ -1,28 +1,43 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Header from './Header'
 import AccountSubmitter from './ApiSubmitter'
 import {Route} from "react-router-dom";
 import TopTable from './TopTable'
 import WeeklyTable from './WeeklyTable'
+import WeeklyGuildTable from './WeeklyGuildTable'
 import services from '../services/services'
-
 
 
 const Main = props => {
 
     const [topWeeklyKiller, setTopWeeklyKiller] = useState('')
-
     const [leaderboard, setLeaderboard] = useState([])
     const [weekly, setWeekly] = useState([])
+    const [weeklyGuild, setWeeklyGuild] = useState([])
+    const dropDownRef = useRef(null)
+    // const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
 
-    useEffect(()=>{
+    useEffect(() => {
         services.loadWeeklyTop()
             .then(res => {
-                if(res.length>0) {
+                if (res.length > 0) {
                     setTopWeeklyKiller(res[0].name)
                 }
             })
-    },[])
+    }, [])
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    });
+
+    const handleClickOutside = (event) => {
+        if (dropDownRef.current && !dropDownRef.current.contains(event.target)) {
+            document.getElementById("dropDownList").classList.remove("show");
+        }
+    };
 
     const weeklyHandler = () => {
         services.weekly()
@@ -56,24 +71,26 @@ const Main = props => {
             })
     }
 
+    const weeklyGuildHandler = () => {
+        services.loadWeeklyGuild()
+            .then(json => {
+                if (json.length > 1) {
+                    json.sort((a, b) => b.guild_weekly_totals - a.guild_weekly_totals)
+                }
+                json.map((item, i) => {
+                    item['rank'] = i + 1
+                })
+                return json
+            })
+            .then(json => {
+                setWeeklyGuild(json)
+            })
+    }
+
     const showDropDown = () => {
         document.getElementById("dropDownList").classList.toggle("show");
     }
-      
-      // Close the dropdown menu if the user clicks outside of it
-    //  window.onclick = function(event) {
-    //     if (!event.target.matches('.dropbtn')) {
-    //       var dropdowns = document.getElementsByClassName("dropdown-content");
-    //       var i;
-    //       for (i = 0; i < dropdowns.length; i++) {
-    //         var openDropdown = dropdowns[i];
-    //         if (openDropdown.classList.contains('show')) {
-    //           openDropdown.classList.remove('show');
-    //         }
-    //       }
-    //     }
-    //   }
-      
+
 
     return (
         <div>
@@ -81,14 +98,18 @@ const Main = props => {
                 topWeeklyKiller={topWeeklyKiller}
                 weeklyHandler={weeklyHandler}
                 leaderboardHandler={leaderboardHandler}
-                showDropDown={showDropDown}/>
+                showDropDown={showDropDown}
+                dropDownRef={dropDownRef}
+                weeklyGuildHandler={weeklyGuildHandler}/>
 
 
             <Route path="/" exact component={() => <AccountSubmitter/>}/>
             <Route path="/top" component={() => <TopTable
-                                                            leaderboard={leaderboard}/>}/>
+                leaderboard={leaderboard}/>}/>
             <Route path="/week" component={() => <WeeklyTable
-                                                            weekly={weekly}/>}/>
+                weekly={weekly}/>}/>
+            <Route path="/weeklyGuild" component={() => <WeeklyGuildTable
+                weeklyGuild={weeklyGuild}/>}/>
 
         </div>
     )

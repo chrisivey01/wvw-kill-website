@@ -47,6 +47,11 @@ export default {
             .then(response => response.json())
     },
 
+    loadWeeklyGuild() {
+        return fetch(url + '/topWeeklyGuild')
+            .then(response => response.json())
+    }
+
     // obtainAchievements(api){
     //     return fetch(achievementUrl + api)
     //         .then(results => results.json())

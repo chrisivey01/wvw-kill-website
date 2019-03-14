@@ -7,9 +7,9 @@ const WeeklyTable = props => {
     return (
         <div>
             <BootstrapTable className="fontColor" data={weekly_tally} rowClasses="rows" search pagination hover>
-                <TableHeaderColumn width='70px' isKey dataField='rank' dataSort={true}>Ranks</TableHeaderColumn>
+                <TableHeaderColumn width='40px' isKey dataField='rank'>Ranks</TableHeaderColumn>
                 <TableHeaderColumn width='200px' dataField='name' dataSort={true}>Account ID</TableHeaderColumn>
-                <TableHeaderColumn width='200px' dataField='weekly_kill_total' dataSort={true}>Kill Total</TableHeaderColumn>
+                <TableHeaderColumn width='50px' dataField='weekly_kill_total'>Kill Total</TableHeaderColumn>
                 <TableHeaderColumn width='200px' dataField='guild' dataSort={true}>Guild</TableHeaderColumn>
                 <TableHeaderColumn width='200px' dataField='world' dataSort={true}>World</TableHeaderColumn>
             </BootstrapTable>

@@ -3,7 +3,6 @@ import React from 'react'
 const AccountInfo = props => {
 
 
-
     return (
         <div>
             <div>
@@ -18,23 +17,24 @@ const AccountInfo = props => {
             <div>
                 <select
                     value={props.guildSelector}
-                    onChange={(e)=>props.guildSelectHandler(e)}
-                     style={{color:"black"}}>
-                    <option value="" disabled selected hidden >Select your guild</option>
-                    {props.accountData.guildNames.map(guild =>{
+                    onChange={(e) => props.guildSelectHandler(e)}
+                    style={{color: "black"}}>
+                    <option value="" disabled selected hidden>Select your guild</option>
+                    {props.accountData.guildNames.map(guild => {
                         return <option key={guild}>{guild}</option>
                     })}
                 </select>
             </div>
             <div>
                 <button
-                    style={{color:"black"}}
-                    onClick={props.submitAccount}>Submit Account</button>
+                    style={{color: "black"}}
+                    onClick={props.submitAccount}>Submit Account
+                </button>
                 <div>
-                 <label style={{color:"red"}}>Please wait 5 minutes to see your information in table.</label>
+                    <label style={{color: "red"}}>Please wait 5 minutes to see your information in table.</label>
                 </div>
                 <div>
-                    <label style={{color:"red"}}>Run into issues? Suggestions? Msg Chris.4527</label>
+                    <label style={{color: "red"}}>Run into issues? Suggestions? Msg Chris.4527</label>
                 </div>
             </div>
         </div>

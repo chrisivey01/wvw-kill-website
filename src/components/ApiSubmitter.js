@@ -6,9 +6,8 @@ import AccountInfo from './AccountInfo'
 const ApiSubmitter = props => {
     const [api, setApi] = useState('')
     const [accountData, setAccountData] = useState({})
-    const [accountSubmittedText, setaccountSubmittedText ] = useState((''))
+    const [accountSubmittedText, setaccountSubmittedText] = useState((''))
     const [guildSelector, setGuildSelector] = useState([])
-
 
 
     const submitApiHandler = () => {
@@ -28,16 +27,13 @@ const ApiSubmitter = props => {
     }
 
     const submitAccount = (accountData, guildSelector) => {
-        services.submitAccount(accountData,guildSelector)
-            .then(results =>{
+        services.submitAccount(accountData, guildSelector)
+            .then(results => {
                 setaccountSubmittedText(results)
             })
     }
 
-    useEffect(()=>{
-        // console.log(accountData)
-        // console.log(guildSelector)
-        // console.log(api)
+    useEffect(() => {
 
     })
 
@@ -49,20 +45,20 @@ const ApiSubmitter = props => {
                 {accountSubmittedText}
             </div>
             <input
-            placeholder="Submit API"
-            onChange={(e)=>setApi(e.target.value)}
-            value={api}
-            style={{color:"black"}}
+                placeholder="Submit API"
+                onChange={(e) => setApi(e.target.value)}
+                value={api}
+                style={{color: "black"}}
             />
 
-            <button style={{color:"black"}}onClick={submitApiHandler}>Load API</button>
+            <button style={{color: "black"}} onClick={submitApiHandler}>Load API</button>
 
             {Object.entries(accountData).length > 0 && accountData.text !== "invalid key" && accountData.text !== "requires scope progression" ?
-            <AccountInfo
-                accountData={accountData}
-                guildSelector={guildSelector}
-                guildSelectHandler={guildSelectHandler}
-                submitAccount={()=>submitAccount(accountData,guildSelector)}/>
+                <AccountInfo
+                    accountData={accountData}
+                    guildSelector={guildSelector}
+                    guildSelectHandler={guildSelectHandler}
+                    submitAccount={() => submitAccount(accountData, guildSelector)}/>
                 : null}
 
 
