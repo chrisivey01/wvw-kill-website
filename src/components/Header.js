@@ -10,7 +10,7 @@ const Header = props => {
                     <Link to="/week" onClick={props.weeklyHandler}>
                         <button className="links">Weekly Kill Ranks</button>
                     </Link>
-                    <Link to="/weeklyGuild" onClick={props.weeklyGuildHandler}>
+                    <Link to="/weeklyguild" onClick={props.weeklyGuildHandler}>
                         <button className="links">Weekly Guild Ranks</button>
                     </Link>
                     <Link to="/top" onClick={props.leaderboardHandler}>

@@ -108,7 +108,7 @@ const Main = props => {
                 leaderboard={leaderboard}/>}/>
             <Route path="/week" component={() => <WeeklyTable
                 weekly={weekly}/>}/>
-            <Route path="/weeklyGuild" component={() => <WeeklyGuildTable
+            <Route path="/weeklyguild" component={() => <WeeklyGuildTable
                 weeklyGuild={weeklyGuild}/>}/>
 
         </div>
