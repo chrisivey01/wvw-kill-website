@@ -52,14 +52,5 @@ export default {
             .then(response => response.json())
     }
 
-    // obtainAchievements(api){
-    //     return fetch(achievementUrl + api)
-    //         .then(results => results.json())
-    // },
-    //
-    // guildObtainer(guildId){
-    //     return fetch(guildUrl + guildId)
-    //         .then(results => results.json())
-    // }
 }
 

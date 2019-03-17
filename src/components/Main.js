@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Header from './Header'
 import AccountSubmitter from './ApiSubmitter'
-import {Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import TopTable from './TopTable'
 import WeeklyTable from './WeeklyTable'
 import WeeklyGuildTable from './WeeklyGuildTable'
@@ -27,11 +27,22 @@ const Main = props => {
     }, [])
 
     useEffect(() => {
+        if(window.location.href === 'http://localhost:3000/weeklyguild'){
+            weeklyGuildHandler()
+        }else if(window.location.href === 'http://localhost:3000/week'){
+            weeklyHandler()
+        }else if(window.location.href === 'http://localhost:3000/top'){
+            leaderboardHandler()
+        }
+    },[])
+
+    useEffect(() => {
         document.addEventListener('click', handleClickOutside, true);
         return () => {
             document.removeEventListener('click', handleClickOutside, true);
         };
     });
+
 
     const handleClickOutside = (event) => {
         if (dropDownRef.current && !dropDownRef.current.contains(event.target)) {
@@ -103,12 +114,12 @@ const Main = props => {
                 weeklyGuildHandler={weeklyGuildHandler}/>
 
 
-            <Route path="/" exact component={() => <AccountSubmitter/>}/>
-            <Route path="/top" component={() => <TopTable
+            <Route exact path="/" exact component={() => <AccountSubmitter/>}/>
+            <Route exact path="/top" component={() => <TopTable
                 leaderboard={leaderboard}/>}/>
-            <Route path="/week" component={() => <WeeklyTable
+            <Route exact path="/week" component={() => <WeeklyTable
                 weekly={weekly}/>}/>
-            <Route path="/weeklyguild" component={() => <WeeklyGuildTable
+            <Route exact path="/weeklyguild" component={() => <WeeklyGuildTable
                 weeklyGuild={weeklyGuild}/>}/>
 
         </div>
