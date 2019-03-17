@@ -27,11 +27,11 @@ const Main = props => {
     }, [])
 
     useEffect(() => {
-        if(window.location.href === 'http://localhost:3000/weeklyguild'){
+        if(window.location.href === 'http://wvw-community.com/weeklyguild'){
             weeklyGuildHandler()
-        }else if(window.location.href === 'http://localhost:3000/week'){
+        }else if(window.location.href === 'http://wvw-community.com/week'){
             weeklyHandler()
-        }else if(window.location.href === 'http://localhost:3000/top'){
+        }else if(window.location.href === 'http://wvw-community.com/top'){
             leaderboardHandler()
         }
     },[])
