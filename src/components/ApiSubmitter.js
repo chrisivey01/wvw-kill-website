@@ -61,6 +61,11 @@ const ApiSubmitter = props => {
                     submitAccount={() => submitAccount(accountData, guildSelector)}/>
                 : null}
 
+            <div>
+                <br/>
+                <br/>
+                Love the work? Got great ideas? Donate, or message me in game or Discord! 
+            </div>
 
         </div>
     )
