@@ -5,6 +5,8 @@ import {Route, withRouter} from "react-router-dom";
 import TopTable from './TopTable'
 import WeeklyTable from './WeeklyTable'
 import WeeklyGuildTable from './WeeklyGuildTable'
+import ContactMe from './ContactMe'
+
 import services from '../services/services'
 
 
@@ -121,6 +123,8 @@ const Main = props => {
                 weekly={weekly}/>}/>
             <Route exact path="/weeklyguild" component={() => <WeeklyGuildTable
                 weeklyGuild={weeklyGuild}/>}/>
+
+            <Route exact path="/contact" component={() => <ContactMe/>}/>
 
         </div>
     )

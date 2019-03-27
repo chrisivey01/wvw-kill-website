@@ -16,6 +16,9 @@ const Header = props => {
                     <Link to="/top" onClick={props.leaderboardHandler}>
                         <button className="links">Top Kill Ranks</button>
                     </Link>
+                    <Link to="/contact">
+                        <button className="links">Contact</button>
+                    </Link>
                 </div>
             </div>
             <span>
