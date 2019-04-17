@@ -1,7 +1,10 @@
 //9F1DA7B3-F32A-024F-B76A-7A496E9A207F7EAF1AF3-DB60-493B-B4E5-5503BA064F6B
 import axios from 'axios'
-
-const url = 'http://localhost:8000';
+const accountUrl = 'https://api.guildwars2.com/v2/account?access_token='
+const achievementUrl = 'https://api.guildwars2.com/v2/account/achievements?access_token='
+let guildUrl = 'https://api.guildwars2.com/v2/guild/'
+// const url = 'http://localhost:8000';
+const url = 'http://18.209.63.46:8000'
 
 export default {
     contactMeApi(contactDetails){
